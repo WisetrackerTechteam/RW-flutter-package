@@ -1,0 +1,41 @@
+group 'kr.co.wisetracker.dot'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://dl.bintray.com/wisetracker/maven' }
+        maven { url 'https://dl.bintray.com/tracker/maven' }
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 19
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+dependencies {
+    // V2
+    compile("com.sdk.wisetracker.base:base_module_test:0.0.149")
+    compile("com.sdk.wisetracker.new_dot:new_dot_module_test:0.0.136")
+    compile("com.sdk.wisetracker.dox:dox_module_test:0.0.131")
+}
