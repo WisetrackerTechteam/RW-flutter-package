@@ -61,8 +61,12 @@ public class DotPlugin implements FlutterPlugin, MethodCallHandler {
   }
   private String[] getStringArray(MethodCall call, String key){
     String[] result = null;
-    if( call.arguments != null && call.hasArgument(key)  ){
-      result = (String[])(call.argument(key));
+    if( call.arguments != null && call.hasArgument(key)  ) {
+      if ((call.argument(key)) instanceof List) {
+        result = ((List<String>)(call.argument(key))).toArray(new String[0]);
+      }else if ((call.argument(key)) instanceof String[]){
+        result = (String[])(call.argument(key));
+      }
     }
     return result;
   }
@@ -76,7 +80,21 @@ public class DotPlugin implements FlutterPlugin, MethodCallHandler {
   private double[] getDoubleArray(MethodCall call , String key ){
     double[] result = null;
     if( call.arguments != null && call.hasArgument(key)  ) {
-      result = (double[])(call.argument(key));
+      if ((call.argument(key)) instanceof List) {
+        List _dl = (List)(call.argument(key));
+        if( _dl != null && _dl.size() > 0 ){
+          result = new double[_dl.size()];
+          for(int ix =0; ix< _dl.size(); ix++){
+            if( _dl.get(ix) instanceof Double ){
+              result[ix] = ((Double)_dl.get(ix)).doubleValue();
+            }else if( _dl.get(ix) instanceof Integer ){
+              result[ix] = ((Integer)_dl.get(ix)).intValue();
+            }
+          }
+        }
+      }else if ((call.argument(key)) instanceof double[]) {
+        result = (double[])(call.argument(key));
+      }
     }
     return result;
   }
@@ -90,7 +108,17 @@ public class DotPlugin implements FlutterPlugin, MethodCallHandler {
   private int[] getIntArray(MethodCall call , String key ){
     int[] result = null;
     if( call.arguments != null && call.hasArgument(key)  ) {
-      result = (int[])(call.argument(key));
+      if ((call.argument(key)) instanceof List) {
+        List<Integer> _il = (List<Integer>)(call.argument(key));
+        if( _il != null && _il.size() > 0 ){
+          result = new int[_il.size()];
+          for(int ix =0; ix< _il.size(); ix++){
+            result[ix] = _il.get(ix).intValue();
+          }
+        }
+      }else if ((call.argument(key)) instanceof int[]) {
+        result = (int[])(call.argument(key));
+      }
     }
     return result;
   }
@@ -104,7 +132,7 @@ public class DotPlugin implements FlutterPlugin, MethodCallHandler {
   private boolean getBoolean(MethodCall call, String key){
     boolean flag = false;
     if( call.arguments != null && call.hasArgument(key)  ){
-      flag = (boolean)(call.argument(key));
+        flag = (boolean)(call.argument(key));
     }
     return flag;
   }
