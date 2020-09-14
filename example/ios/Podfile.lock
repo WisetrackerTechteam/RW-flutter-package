@@ -1,0 +1,33 @@
+PODS:
+  - CouchbaseLite (2.7.1)
+  - dot_sdk (0.0.1):
+    - Flutter
+    - RW
+  - Flutter (1.0.0)
+  - RW (0.0.20):
+    - CouchbaseLite
+
+DEPENDENCIES:
+  - dot_sdk (from `.symlinks/plugins/dot_sdk/ios`)
+  - Flutter (from `Flutter`)
+
+SPEC REPOS:
+  trunk:
+    - CouchbaseLite
+    - RW
+
+EXTERNAL SOURCES:
+  dot_sdk:
+    :path: ".symlinks/plugins/dot_sdk/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  CouchbaseLite: cccddc91850c0005b1b0c57d306104b7d8aab685
+  dot_sdk: 7dd65334c24cee76d803590bfa4cb16b18d514a1
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  RW: 9c4530c55379fc82bddf2efc17b1ed7658f63096
+
+PODFILE CHECKSUM: 9fcf094fa24c8b52ee720139b0625d8c8d74ef8c
+
+COCOAPODS: 1.9.3
