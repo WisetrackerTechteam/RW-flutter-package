@@ -18,105 +18,72 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    try {
-      print('init start ');
-      DOT.initialization();
-
-      print('init end ');
-    } on PlatformException {
-      print("init faild");
-    }
-
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    //String platformVersion;
-
-    // Platform messages may fail, so we use a try/catch PlatformException.
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {});
+    DOT.initialization();
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Welcome to Flutter',
-      home: RandomWords(),
+      theme: ThemeData(),
+      navigatorObservers: [MyRouteObserver()],
+      home: Screen1(),
+      routes: {
+        'screen2': (context) => Screen2(),
+        'screen3': (context) => Screen3(),
+      },
     );
   }
 }
 
-class RandomWordsState extends State<RandomWords> {
-  final _suggestions = <WordPair>[];
-  final _saved = Set<WordPair>(); // NEW
-  final _biggerFont = const TextStyle(fontSize: 18.0);
-
+class Screen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Wisetracker.startPage("screen1");
+    print("screen1");
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Version '),
-        actions: [
-          IconButton(icon: Icon(Icons.list), onPressed: _pushSaved),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Screen 1'),
+            SizedBox(height: 30.0),
+            RaisedButton(
+              child: Text('Screen 2'),
+              onPressed: () => Navigator.of(context).pushNamed('screen2'),
+            ),
+            RaisedButton(
+              child: Text('Screen 3'),
+              onPressed: () => Navigator.of(context).pushNamed('screen3'),
+            )
+          ],
+        ),
       ),
-      body: _buildSuggestions(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _eventOccured2,
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
+      ),
     );
   }
 
-  Widget _buildSuggestions() {
-    return ListView.builder(
-        padding: const EdgeInsets.all(16.0),
-        itemBuilder: /*1*/ (context, i) {
-          if (i.isOdd) return Divider(); /*2*/
+  void _eventOccured2() {
+    // Wisetracker.setGoalProductArray(["aaa", "bbb", "ccc"]);
+    // Wisetracker.sendTransaction;
 
-          final index = i ~/ 2; /*3*/
-          if (index >= _suggestions.length) {
-            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-          }
-          return _buildRow(_suggestions[index]);
-        });
-  }
+    // Wisetracker.setOrderProductArray(["aaa", "bbb", "ccc"]);
+    // Wisetracker.sendTransaction;
+    // Wisetracker.setOrderQuantityArray([1]);
+    // Wisetracker.setOrderAmountArray([550000]);
+    // Wisetracker.setOrderNo("tr012345");
+    // Wisetracker.setPageIdentity("ODR");
 
-  Widget _buildRow(WordPair pair) {
-    final alreadySaved = _saved.contains(pair); // NEW
-    return ListTile(
-      title: Text(
-        pair.asPascalCase,
-        style: _biggerFont,
-      ),
-      trailing: Icon(
-        // NEW from here...
-        alreadySaved ? Icons.favorite : Icons.favorite_border,
-        color: alreadySaved ? Colors.red : null,
-      ),
-      onTap: () {
-        // NEW lines from here...
-        setState(() {
-          if (alreadySaved) {
-            _saved.remove(pair);
-          } else {
-            _saved.add(pair);
-          }
-        });
-      }, // ... to here.
-    );
-  }
-
-  void _pushSaved() {
-    print("pushSaved111");
-    // var event = {};
-    // event["event"] = "login_complete";
-    // event["loginTp"] = "facebook"; //로그인 방식
-
-    // DOT.logEvent(event);
+    // Wisetracker.setOrderNo("orderno20200910");
+    // Wisetracker.setProduct("nike123", "nikeshoes12345");
+    // Wisetracker.setPageIdentity("ODR");
+    // Wisetracker.setOrderAmountArray([10000.0, 20000.0, 30000.0]);
+    // Wisetracker.setOrderQuantityArray([1, 3, 8]);
+    // Wisetracker.putRevenueData("pnc", "pnc11111111");
+    // Wisetracker.setOrderProductArray(['상품코드1', '상품코드2']);
 
     var purchase = {};
     purchase["ordNo"] = "주문번호";
@@ -132,38 +99,81 @@ class RandomWordsState extends State<RandomWords> {
     purchase["product"] = productArray;
 
     DOT.logPurchase(purchase);
-    Navigator.of(context).push(
-      MaterialPageRoute<void>(
-        // NEW lines from here...
-        builder: (BuildContext context) {
-          final tiles = _saved.map(
-            (WordPair pair) {
-              return ListTile(
-                title: Text(
-                  pair.asPascalCase,
-                  style: _biggerFont,
-                ),
-              );
-            },
-          );
-          final divided = ListTile.divideTiles(
-            context: context,
-            tiles: tiles,
-          ).toList();
-
-          return Scaffold(
-            appBar: AppBar(
-              title: Text('Saved Suggestions'),
-            ),
-            body: ListView(children: divided),
-          );
-        }, // ...to here.
-      ),
-    );
   }
 }
 
-class RandomWords extends StatefulWidget {
+class Screen2 extends StatelessWidget {
   @override
-  RandomWordsState createState() => RandomWordsState();
+  Widget build(BuildContext context) {
+    //
+    var screen = {};
+    screen["pi"] = "MAIN";
+    screen["curcy"] = "화폐단위";
+
+    DOT.logScreen(screen);
+    return Scaffold(appBar: AppBar(), body: Center(child: Text('Screen 2')));
+  }
+}
+
+class Screen3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //Wisetracker.startPage("screen2");
+
+    var screen = {};
+    screen["pi"] = "DTL";
+    screen["event"] = "view_product";
+
+    DOT.logScreen(screen);
+
+    return Scaffold(appBar: AppBar(), body: Center(child: Text('Screen 3')));
+  }
+}
+
+class MyRouteObserver extends RouteObserver<PageRoute<dynamic>> {
+  // -------------------
+  // ÷추가
+  var screenName = '';
+  void _sendScreenView(PageRoute<dynamic> route) {
+    var currentScreenName = route.settings.name;
+    if (screenName != currentScreenName) {
+      print('screenName  $screenName --> $currentScreenName ');
+      DOT.onStartPage();
+      this.screenName = currentScreenName;
+    }
+  }
+  // ---------
+
+  @override
+  void didPush(Route<dynamic> route, Route<dynamic> previousRoute) {
+    super.didPush(route, previousRoute);
+    // -------------------
+    // ÷추가
+    if (route is PageRoute) {
+      _sendScreenView(route); // ÷추가
+    }
+    // ------
+  }
+
+  @override
+  void didReplace({Route<dynamic> newRoute, Route<dynamic> oldRoute}) {
+    super.didReplace(newRoute: newRoute, oldRoute: oldRoute);
+    // -------------------
+    // ÷추가
+    if (newRoute is PageRoute) {
+      _sendScreenView(newRoute); // ÷추가
+    }
+    // ------
+  }
+
+  @override
+  void didPop(Route<dynamic> route, Route<dynamic> previousRoute) {
+    super.didPop(route, previousRoute);
+    // -------------------
+    // ÷추가
+    if (previousRoute is PageRoute && route is PageRoute) {
+      _sendScreenView(previousRoute);
+    }
+    // -------------------
+  }
 }
