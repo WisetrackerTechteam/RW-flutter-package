@@ -14,6 +14,8 @@ import com.sdk.wisetracker.new_dot.open.DOT;
 
 import java.lang.reflect.Type;
 import java.util.Map;
+import java.util.List;
+import java.util.HashMap;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
@@ -234,19 +236,12 @@ public class DotPlugin implements FlutterPlugin, MethodCallHandler {
         case "logScreen":
           try{
             WiseLog.d("log screen event");
-            String pageJson = this.getString(call,"pageJson");
-            if( pageJson != null && !pageJson.equals("")){
-              WiseLog.d("raw data : " + pageJson);
-              Type type = new TypeToken<Map<String, Object>>() {}.getType();
-              Map<String, Object> pageMap = new Gson().fromJson(pageJson, type);
-              if (pageMap != null) {
-                DOT.logScreen(pageMap);
+            Map<String, Object> screenMap = this.getMap(call,"pageJson");
+            if (screenMap != null) {
+                DOT.logScreen(screenMap);
                 doExecute = true;
-              }else{
-                WiseLog.d("page map is null");
-              }
             }else{
-              WiseLog.d("page json is null");
+                WiseLog.d("page map is null");
             }
           }catch (Exception e){
             e.printStackTrace();
@@ -256,19 +251,12 @@ public class DotPlugin implements FlutterPlugin, MethodCallHandler {
         case "logPurchase":
           try{
             WiseLog.d("log purchase event");
-            String purchaseJson = this.getString(call,"purchaseJson");
-            if( purchaseJson != null && !purchaseJson.equals("")){
-              WiseLog.d("raw data : " + purchaseJson);
-              Type type = new TypeToken<Map<String, Object>>() {}.getType();
-              Map<String, Object> purchaseMap = new Gson().fromJson(purchaseJson, type);
-              if (purchaseMap != null) {
+            Map<String, Object> purchaseMap = this.getMap(call,"purchaseJson");
+            if (purchaseMap != null) {
                 DOT.logPurchase(purchaseMap);
                 doExecute = true;
-              }else{
-                WiseLog.d("purchase map is null");
-              }
             }else{
-              WiseLog.d("purchase json is null");
+                WiseLog.d("purchase map is null");
             }
           }catch (Exception e){
             e.printStackTrace();
@@ -278,10 +266,13 @@ public class DotPlugin implements FlutterPlugin, MethodCallHandler {
         case "logEvent":
           try{
             WiseLog.d("log conversion event");
-            Map<String, Object> conversionMap = this.getMap(call,conversionJson);
-            DOT.logEvent(conversionMap);
-            String conversionJson = this.getString(call,"conversionJson");
-            doExecute = true;
+            Map<String, Object> conversionMap = this.getMap(call,"conversionJson");
+            if (conversionMap != null) {
+                 DOT.logEvent(conversionMap);
+                doExecute = true;
+            }else{
+                WiseLog.d("conversion map is null");
+            }
             // if( conversionJson != null && !conversionJson.equals("")){
             //   WiseLog.d("raw data : " + conversionJson);
             //   Type type = new TypeToken<Map<String, Object>>() {}.getType();
@@ -292,31 +283,23 @@ public class DotPlugin implements FlutterPlugin, MethodCallHandler {
             //   }else{
             //     WiseLog.d("conversion map is null");
             //   }
-            }else{
-              WiseLog.d("conversion json is null");
-            }
+            // }else{
+            //   WiseLog.d("conversion json is null");
+            // }
           }catch (Exception e){
             e.printStackTrace();
           }
           break;
 
-
         case "logClick":
           try{
             WiseLog.d("log click event");
-            String clickJson = this.getString(call,"clickJson");
-            if( clickJson != null && !clickJson.equals("")){
-              WiseLog.d("raw data : " + clickJson);
-              Type type = new TypeToken<Map<String, Object>>() {}.getType();
-              Map<String, Object> clickMap = new Gson().fromJson(clickJson, type);
-              if (clickMap != null) {
-                DOT.logClick(clickMap);
+            Map<String, Object> clickMap = this.getMap(call,"clickJson");
+            if (clickMap != null) {
+                 DOT.logClick(clickMap);
                 doExecute = true;
-              }else{
-                WiseLog.d("click map is null");
-              }
             }else{
-              WiseLog.d("click json is null");
+                WiseLog.d("click map is null");
             }
           }catch (Exception e){
             e.printStackTrace();
