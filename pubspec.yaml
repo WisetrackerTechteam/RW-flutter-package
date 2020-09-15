@@ -1,7 +1,6 @@
 name: dot_sdk
 description: Wisetracker RW SDK flutter plugin
 version: 0.0.1
-author: wisetracker<tech@wisetracker.co.kr>
 homepage: http://www.wisetracker.co.kr
 
 environment:
