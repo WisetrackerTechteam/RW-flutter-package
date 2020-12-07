@@ -35,7 +35,7 @@ android {
 }
 dependencies {
     // V2
-    compile("com.sdk.wisetracker.base:base_module_test:0.0.149")
-    compile("com.sdk.wisetracker.new_dot:new_dot_module_test:0.0.136")
-    compile("com.sdk.wisetracker.dox:dox_module_test:0.0.131")
+    compile("com.sdk.wisetracker.base:base_module:1.0.21")
+    compile("com.sdk.wisetracker.new_dot:new_dot_module:1.0.21")
+    compile("com.sdk.wisetracker.dox:dox_module:1.0.12")
 }
