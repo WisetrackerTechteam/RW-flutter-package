@@ -14,4 +14,4 @@ A Flutter plugin for Wisetracker SDK.
 
 Visit wisetracker's document guide site
 
-[Wisetracker Document site](document.wisetracker.co.kr/v2/docs/sdk/flutter/flutter-install-guide)
+[Wisetracker Document site](http://document.wisetracker.co.kr/v2/docs/sdk/flutter/flutter-install-guide)
