@@ -37,4 +37,5 @@ dependencies {
     // V2
     compile("com.sdk.wisetracker.base:base_module:1.0.23")
     compile("com.sdk.wisetracker.new_dot:new_dot_module:1.0.23")
+    compile("com.sdk.wisetracker.dox:dox_module:0.0.12")
 }
