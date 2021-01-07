@@ -9,3 +9,7 @@
 ## 0.0.3
 
 * modify readme
+
+## 0.0.4
+
+* andoird initialization API update
