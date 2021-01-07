@@ -153,7 +153,7 @@ public class DotPlugin implements FlutterPlugin, MethodCallHandler {
       switch (call.method){
         case "initialization":
           try{
-            DOT.init(this.applicationContext);
+            DOT.initialization(this.applicationContext);
             doExecute = true;
           }catch(Exception e){
             e.printStackTrace();
