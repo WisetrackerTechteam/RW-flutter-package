@@ -90,11 +90,14 @@
             if( [userDict objectForKey:@"ut4"] != nil) {
                 [user setAttribute4:[userDict objectForKey:@"ut4"]];
             }
-            if( [userDict objectForKey:@"ag"] != nil) {
+            if( [userDict objectForKey:@"ut5"] != nil) {
                 [user setAttribute5:[userDict objectForKey:@"ut5"]];
             }
-            if( [userDict objectForKey:@"ag"] != nil) {
-                [user setAttribute5:[userDict objectForKey:@"ut5"]];
+            if( [userDict objectForKey:@"mbl"] != nil) {
+                [user setAttribute5:[userDict objectForKey:@"mbl"]];
+            }
+            if( [userDict objectForKey:@"mbid"] != nil) {
+                [user setAttribute5:[userDict objectForKey:@"mbid"]];
             }
             if( [userDict objectForKey:@"isLogin"] != nil) {
                 [user setIsLogin:[userDict objectForKey:@"isLogin"]];
