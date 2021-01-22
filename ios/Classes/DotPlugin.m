@@ -63,7 +63,51 @@
         } else if ([@"onStopPage" isEqualToString:call.method]){
            
         } else if ([@"setUser" isEqualToString:call.method]){
+            NSString *userStr = [self getString:call param1:@"userJson"];
+            NSData *data = [userStr dataUsingEncoding:NSUTF8StringEncoding];
+            NSDictionary *userDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"userDict in handleMethodCall : %@", userDict);
             
+            User *user = [[User alloc] init];
+            if( [userDict objectForKey:@"mbr"] != nil) {
+                [user setMember:[userDict objectForKey:@"mbr"]];
+            }
+            if( [userDict objectForKey:@"sx"] != nil) {
+                [user setGender:[userDict objectForKey:@"sx"]];
+            }
+            if( [userDict objectForKey:@"ag"] != nil) {
+                [user setAge:[userDict objectForKey:@"ag"]];
+            }
+            if( [userDict objectForKey:@"ut1"] != nil) {
+                [user setAttribute1:[userDict objectForKey:@"ut1"]];
+            }
+            if( [userDict objectForKey:@"ut2"] != nil) {
+                [user setAttribute2:[userDict objectForKey:@"ut2"]];
+            }
+            if( [userDict objectForKey:@"ut3"] != nil) {
+                [user setAttribute3:[userDict objectForKey:@"ut3"]];
+            }
+            if( [userDict objectForKey:@"ut4"] != nil) {
+                [user setAttribute4:[userDict objectForKey:@"ut4"]];
+            }
+            if( [userDict objectForKey:@"ag"] != nil) {
+                [user setAttribute5:[userDict objectForKey:@"ut5"]];
+            }
+            if( [userDict objectForKey:@"ag"] != nil) {
+                [user setAttribute5:[userDict objectForKey:@"ut5"]];
+            }
+            if( [userDict objectForKey:@"isLogin"] != nil) {
+                [user setIsLogin:[userDict objectForKey:@"isLogin"]];
+            }
+            if( [userDict objectForKey:@"loginTp"] != nil) {
+                [user setLoginTp:[userDict objectForKey:@"loginTp"]];
+            }
+            if( [userDict objectForKey:@"signupTp"] != nil) {
+                [user setSignupTp:[userDict objectForKey:@"signupTp"]];
+            }
+            
+            [DOT setUser:user];
+            doExecute = true;
             doExecute = true;
         } 
         else if ([@"setUser" isEqualToString:call.method]){
