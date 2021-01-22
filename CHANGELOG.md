@@ -13,3 +13,7 @@
 ## 0.0.4
 
 * andoird initialization API update
+
+## 0.0.5
+
+* interface function update
