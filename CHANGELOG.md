@@ -17,3 +17,7 @@
 ## 0.0.5
 
 * interface function update
+
+## 0.0.6
+
+* android sdk update
