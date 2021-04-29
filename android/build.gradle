@@ -16,8 +16,7 @@ rootProject.allprojects {
     repositories {
         google()
         jcenter()
-        maven { url 'https://dl.bintray.com/wisetracker/maven' }
-        maven { url 'https://dl.bintray.com/tracker/maven' }
+        maven { url 'https://wisetracker.jfrog.io/artifactory/wisetracker-gradle-release-local' }
     }
 }
 
@@ -35,7 +34,7 @@ android {
 }
 dependencies {
     // V2
-    compile("com.sdk.wisetracker.base:base_module:1.0.27")
-    compile("com.sdk.wisetracker.new_dot:new_dot_module:1.0.26")
-    compile("com.sdk.wisetracker.dox:dox_module:0.0.12")
+    compile("com.sdk.wisetracker:base_module:1.0.27")
+    compile("com.sdk.wisetracker:new_dot_module:1.0.27")
+    compile("com.sdk.wisetracker:dox_module:1.0.12")
 }

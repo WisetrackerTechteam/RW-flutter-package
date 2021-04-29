@@ -21,3 +21,7 @@
 ## 0.0.6
 
 * android sdk update
+
+## 0.0.7
+
+* android sdk jfrog migration
