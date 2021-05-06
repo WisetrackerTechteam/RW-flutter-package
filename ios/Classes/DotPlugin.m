@@ -94,10 +94,10 @@
                 [user setAttribute5:[userDict objectForKey:@"ut5"]];
             }
             if( [userDict objectForKey:@"mbl"] != nil) {
-                [user setAttribute5:[userDict objectForKey:@"mbl"]];
+                [user setMemberGrade:[userDict objectForKey:@"mbl"]];
             }
             if( [userDict objectForKey:@"mbid"] != nil) {
-                [user setAttribute5:[userDict objectForKey:@"mbid"]];
+                [user setMemberId:[userDict objectForKey:@"mbid"]];
             }
             if( [userDict objectForKey:@"isLogin"] != nil) {
                 [user setIsLogin:[userDict objectForKey:@"isLogin"]];

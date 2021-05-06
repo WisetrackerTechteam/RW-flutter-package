@@ -25,3 +25,11 @@
 ## 0.0.7
 
 * android sdk jfrog migration
+
+## 0.0.8
+
+* android sdk jfrog migration update
+
+## 0.0.9
+
+* 사용자 ID 관련 수정
