@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/services.dart';
 
 class DOT {
@@ -61,5 +60,9 @@ class DOT {
 
   static void logClick(Map clickMap) {
     _channel.invokeMethod("logClick", <String, dynamic>{'clickJson': clickMap});
+  }
+
+  static void setDeepLink(String uni_deepLink) {
+    _channel.invokeMethod("setDeepLink", <String, dynamic>{'uni_deepLink': uni_deepLink
   }
 }

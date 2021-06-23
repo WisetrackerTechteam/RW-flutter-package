@@ -33,3 +33,12 @@
 ## 0.0.9
 
 * 사용자 ID 관련 수정
+
+
+## 0.0.10
+
+* Andorid SDK 1.0.35 update
+
+## 0.0.11
+
+* add SetDeeLink API

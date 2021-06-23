@@ -306,6 +306,21 @@ public class DotPlugin implements FlutterPlugin, MethodCallHandler {
             e.printStackTrace();
           }
           break;
+
+        case "setDeepLink":
+          try{
+            WiseLog.d("setDeepLink in android plugin");
+            String uni_deeplink = this.getString(call,"uni_deeplink");
+            if (uni_deeplink != null) {
+              DOT.setDeepLink(this.applicationContext, uni_deeplink);
+              doExecute = true;
+            }else{
+              WiseLog.d("uni_deeplinkis null");
+            }
+          }catch (Exception e){
+            e.printStackTrace();
+          }
+          break;
       }
     }catch(Exception e){
       e.printStackTrace();

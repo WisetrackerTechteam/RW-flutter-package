@@ -62,6 +62,9 @@
             doExecute = true;
         } else if ([@"onStopPage" isEqualToString:call.method]){
            
+        } else if ([@"setDeepLink" isEqualToString:call.method]){
+            [DOT setDeepLink:[self getString:call param1:@"uni_deepLink"]];
+            doExecute = true;
         } else if ([@"setUser" isEqualToString:call.method]){
             NSString *userStr = [self getString:call param1:@"userJson"];
             NSData *data = [userStr dataUsingEncoding:NSUTF8StringEncoding];
@@ -110,7 +113,6 @@
             }
             
             [DOT setUser:user];
-            doExecute = true;
             doExecute = true;
         } 
         else if ([@"setUser" isEqualToString:call.method]){
