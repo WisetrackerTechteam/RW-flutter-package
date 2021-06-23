@@ -1,11 +1,11 @@
 name: dot_sdk
 description: This is a wisetracker's mobile sdk flutter plugin which is for attribution and inApp analytics. 
-version: 0.0.11
+version: 0.0.12
 homepage: https://github.com/WisetrackerTechteam/RW-flutter-package
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.20.0 <2.0.0"
+  flutter: ">=1.20.0"
 
 dependencies:
   flutter:

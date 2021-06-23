@@ -63,6 +63,7 @@ class DOT {
   }
 
   static void setDeepLink(String uni_deepLink) {
-    _channel.invokeMethod("setDeepLink", <String, dynamic>{'uni_deepLink': uni_deepLink
+    _channel.invokeMethod(
+        "setDeepLink", <String, dynamic>{'uni_deepLink': uni_deepLink});
   }
 }
