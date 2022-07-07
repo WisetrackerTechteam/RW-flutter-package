@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:dot_sdk/dot_sdk.dart'; //  고객사 적용 방법 ( peubspec.yarl
+import 'package:dot_flutter/dot_flutter.dart'; //  고객사 적용 방법 ( peubspec.yarl
 
 void main() {
   runApp(MyApp());

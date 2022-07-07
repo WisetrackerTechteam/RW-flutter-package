@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:dot_sdk/dot_sdk.dart';
+import 'package:dot_flutter/dot_flutter.dart';
 
 void main() {
   const MethodChannel channel = MethodChannel('dot');

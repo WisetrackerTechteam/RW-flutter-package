@@ -3,7 +3,7 @@
 # Run `pod lib lint dot.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'dot_sdk'
+  s.name             = 'dot_flutter'
   s.version          = '1.1.1'
   s.summary          = 'Wisetracker RW SDK flutter plugin'
   s.description      = <<-DESC

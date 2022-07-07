@@ -1,9 +1,9 @@
 
-# dot_sdk
+# dot_flutter
 
 A Flutter plugin for Wisetracker SDK.
 
-[![pub package](https://img.shields.io/pub/v/dot_sdk.svg)](https://pub.dartlang.org/packages/dot_sdk) 
+[![pub package](https://img.shields.io/pub/v/dot_flutter.svg)](https://pub.dev/packages/dot_flutter) 
 
 ### Supported Platforms
 

@@ -5,7 +5,7 @@ class DOT {
   static const MethodChannel _channel = const MethodChannel('dot');
 
   static Future<String> get platformVersion async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
+    final String version = await (_channel.invokeMethod('getPlatformVersion') as FutureOr<String>);
     print("version :" + version);
     return version;
   }
