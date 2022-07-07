@@ -16,8 +16,10 @@ class DOT {
     print("after initialization");
   }
 
-  static void setUser(String userJson) {
-    _channel.invokeMethod("setUser", <String, dynamic>{'userJson': userJson});
+  static void setUser(Map userJson) {
+    if( userJson != null ){
+      _channel.invokeMethod("setUser", <String, dynamic>{'userJson': userJson});  
+    } 
   }
 
   static void setUserLogout() {
@@ -29,7 +31,9 @@ class DOT {
   }
 
   static void onPlayStartWithPeriod(int period) {
-    _channel.invokeMethod("onPlayStart", <String, dynamic>{'period': period});
+    if( period > 0 ){
+      _channel.invokeMethod("onPlayStart", <String, dynamic>{'period': period});  
+    } 
   }
 
   static void onPlayStop() {
@@ -45,25 +49,33 @@ class DOT {
   }
 
   static void logScreen(Map pageMap) {
-    _channel.invokeMethod("logScreen", <String, dynamic>{'pageJson': pageMap});
+    if( pageMap != null ){
+      _channel.invokeMethod("logScreen", <String, dynamic>{'pageJson': pageMap});  
+    } 
   }
 
   static void logPurchase(Map purchaseMap) {
-    _channel.invokeMethod(
-        "logPurchase", <String, dynamic>{'purchaseJson': purchaseMap});
+    if( purchaseMap != null ){
+      _channel.invokeMethod("logPurchase", <String, dynamic>{'purchaseJson': purchaseMap});  
+    } 
   }
 
   static void logEvent(Map eventMap) {
-    _channel.invokeMethod(
-        "logEvent", <String, dynamic>{'conversionJson': eventMap});
+    if( eventMap != null ){
+      _channel.invokeMethod("logEvent", <String, dynamic>{'conversionJson': eventMap});  
+    } 
   }
 
   static void logClick(Map clickMap) {
-    _channel.invokeMethod("logClick", <String, dynamic>{'clickJson': clickMap});
+    if( clickMap != null ){
+      _channel.invokeMethod("logClick", <String, dynamic>{'clickJson': clickMap});  
+    } 
   }
 
   static void setDeepLink(String uni_deepLink) {
-    _channel.invokeMethod(
-        "setDeepLink", <String, dynamic>{'uni_deepLink': uni_deepLink});
+    if( uni_deepLink != null ){
+      _channel.invokeMethod("setDeepLink", <String, dynamic>{'uni_deepLink': uni_deepLink});
+    } 
   }
+
 }

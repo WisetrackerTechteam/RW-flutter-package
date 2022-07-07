@@ -162,12 +162,9 @@ public class DotPlugin implements FlutterPlugin, MethodCallHandler {
 
         case "setUser":
           try{
-            String userJson = this.getString(call,"userJson");
-            if( userJson != null && !userJson.equals("")){
-              WiseLog.d("setUser event :" + userJson);
+            Map tempMap = this.getMap(call,"userJson");
+            if( tempMap != null && !tempMap.equals("")){
               Gson gson = new Gson();
-              Type type = new TypeToken<Map<String, Object>>() {}.getType();
-              Map<String, Object> tempMap = new Gson().fromJson(userJson, type);
               WiseLog.d("tempMap in setUser :" + tempMap);
               String tmpJson = gson.toJson(tempMap);
               User user = new Gson().fromJson(tmpJson, User.class);
