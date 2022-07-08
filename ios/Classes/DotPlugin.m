@@ -65,10 +65,9 @@
         } else if ([@"setDeepLink" isEqualToString:call.method]){
             [DOT setDeepLink:[self getString:call param1:@"uni_deepLink"]];
             doExecute = true;
-        } else if ([@"setUser" isEqualToString:call.method]){
-            NSString *userStr = [self getString:call param1:@"userJson"];
-            NSData *data = [userStr dataUsingEncoding:NSUTF8StringEncoding];
-            NSDictionary *userDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        } else if ([@"setUser" isEqualToString:call.method]){ 
+            
+            NSDictionary *userDict = [self getDictionary:call param1:@"userJson"];                 
             NSLog(@"userDict in handleMethodCall : %@", userDict);
             
             User *user = [[User alloc] init];
