@@ -9,3 +9,7 @@
 ## 1.0.2
 
 * ios 환경에 대한 podfile 버전 수정
+
+## 1.0.3 
+
+* Flutter Plugin 배포 가이드 작성
