@@ -16,6 +16,35 @@ class DOT {
     print("after initialization");
   }
 
+
+  /**
+   * Push Message 관련 함수 
+   **/ 
+  static void setPushClick(String uni_pushclickdata) {
+    if( uni_pushClickData != null ){
+      _channel.invokeMethod("setPushClick", <String, dynamic>{'uni_pushclickdata': uni_pushclickdata});
+    } 
+  }
+
+  static void setPushToken(String uni_pushtoken) {
+    if( uni_pushtoken != null ){
+      _channel.invokeMethod("setPushToken", <String, dynamic>{'uni_pushtoken': uni_pushtoken});
+    } 
+  }
+
+
+  /**
+   * 딥링크 관련 함수.  
+   **/
+  static void setDeepLink(String uni_deepLink) {
+    if( uni_deepLink != null ){
+      _channel.invokeMethod("setDeepLink", <String, dynamic>{'uni_deepLink': uni_deepLink});
+    } 
+  }
+
+  /**
+   * 기본 api 함수 
+   **/  
   static void setUser(Map userJson) {
     if( userJson != null ){
       _channel.invokeMethod("setUser", <String, dynamic>{'userJson': userJson});  
@@ -72,10 +101,6 @@ class DOT {
     } 
   }
 
-  static void setDeepLink(String uni_deepLink) {
-    if( uni_deepLink != null ){
-      _channel.invokeMethod("setDeepLink", <String, dynamic>{'uni_deepLink': uni_deepLink});
-    } 
-  }
+
 
 }
