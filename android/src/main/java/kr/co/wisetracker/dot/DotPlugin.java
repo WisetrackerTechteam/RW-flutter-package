@@ -1,5 +1,6 @@
 package kr.co.wisetracker.dot;
 
+import android.content.Intent;
 import android.content.Context;
 import android.text.TextUtils;
 
@@ -270,20 +271,7 @@ public class DotPlugin implements FlutterPlugin, MethodCallHandler {
                 doExecute = true;
             }else{
                 WiseLog.d("conversion map is null");
-            }
-            // if( conversionJson != null && !conversionJson.equals("")){
-            //   WiseLog.d("raw data : " + conversionJson);
-            //   Type type = new TypeToken<Map<String, Object>>() {}.getType();
-            //   Map<String, Object> conversionMap = new Gson().fromJson(conversionJson, type);
-            //   if (conversionMap != null) {
-            //     DOT.logEvent(conversionMap);
-            //     doExecute = true;
-            //   }else{
-            //     WiseLog.d("conversion map is null");
-            //   }
-            // }else{
-            //   WiseLog.d("conversion json is null");
-            // }
+            } 
           }catch (Exception e){
             e.printStackTrace();
           }
@@ -318,6 +306,39 @@ public class DotPlugin implements FlutterPlugin, MethodCallHandler {
             e.printStackTrace();
           }
           break;
+
+        case "setPushClick":
+          try{
+            WiseLog.d("setPushClick in android plugin");
+            String uni_pushclickdata = this.getString(call,"uni_pushclickdata");
+            if (uni_pushclickdata != null) { 
+              Intent intent = new Intent();
+              intent.putExtra("RW_push_payload_WP", uni_pushclickdata.replaceAll("\\\\\"","\""));
+              DOT.setPushClick(this.applicationContext, intent); 
+              doExecute = true;
+            }else{
+              WiseLog.d("uni_pushclickdata null");
+            }
+          }catch (Exception e){
+            e.printStackTrace();
+          }
+          break;
+          
+        case "setPushToken":
+          try{
+            WiseLog.d("setPushToken in android plugin");
+            String uni_pushtoken = this.getString(call,"uni_pushtoken");
+            if (uni_pushtoken != null) {
+              DOT.setPushToken(uni_pushtoken);
+              doExecute = true;
+            }else{
+              WiseLog.d("uni_pushtoken null");
+            }
+          }catch (Exception e){
+            e.printStackTrace();
+          }
+          break; 
+
       }
     }catch(Exception e){
       e.printStackTrace();

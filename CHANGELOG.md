@@ -13,3 +13,7 @@
 ## 1.0.3 
 
 * Flutter Plugin 배포 가이드 작성
+
+## 1.0.4 
+
+* Push Message 관련 api 추가

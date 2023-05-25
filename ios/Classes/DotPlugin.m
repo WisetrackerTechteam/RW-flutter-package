@@ -116,8 +116,21 @@
         } 
         else if ([@"setUser" isEqualToString:call.method]){
             [DOT setUserLogout];
-            doExecute = true;
-        }else {
+            doExecute = true; 
+        }
+        else if ([@"setPushClick" isEqualToString:call.method]){ 
+            NSError *e;
+            NSDictionary *rw_push_payload_wp_datadict = [NSJSONSerialization JSONObjectWithData:[self getDictionary:call param1:@"uni_pushclickdata"] options:nil error:&e];
+            NSMutableDictionary *RW_push_payload_WP = [[NSMutableDictionary alloc] init];
+            [RW_push_payload_WP setValue:rw_push_payload_wp_datadict forKey:@"RW_push_payload_WP"]; 
+            [DOT setPushClick:RW_push_payload_WP application:UIApplication.sharedApplication];
+            doExecute = true; 
+        }
+        else if ([@"setPushToken" isEqualToString:call.method]){
+            [DOT setPushToken:[self getString:call param1:@"uni_pushtoken"]]; 
+            doExecute = true; 
+        }
+        else {
             result(FlutterMethodNotImplemented);
         }
     }
