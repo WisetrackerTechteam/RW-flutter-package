@@ -40,30 +40,35 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
+	<false/> 
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	
+	<!-- wisetracker sdk configuration -->
+	<key>NSAppTransportSecurity</key>
+        <dict>
+            <key>NSAllowsArbitraryLoads</key>
+            <true/>
+        </dict>
     <key>dotAuthorizationKey</key>
     <dict>
-        <key>accessToken</key>
-        <string></string>
-        <key>dataUploadDelayPeriodSecond</key>
-        <string>0</string>
+        <key>serviceNumber</key>
+        <string>20347</string>
         <key>expireDate</key>
         <string>14</string>
         <key>isDebug</key>
         <string>true</string>
-        <key>isFingerPrint</key>
-        <string>true</string>
         <key>isInstallRetention</key>
         <string>true</string>
-        <key>serviceNumber</key>
-        <string>102</string>
+        <key>isFingerPrint</key>
+        <string>true</string>
+        <key>accessToken</key>
+        <string></string>
         <key>useMode</key>
-        <integer>1</integer>
+        <string>2</string>
     </dict>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+
 </dict>
 </plist>

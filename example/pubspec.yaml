@@ -6,12 +6,16 @@ description: Demonstrates how to use the dot plugin.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <4.0.0'
+  flutter: ">=1.20.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
+  flutter_linkify: ^5.0.0
+  url_launcher: ^6.1.11
+  
   dot_flutter:
     # When depending on this package from a real application you should use:
     #   dot: ^x.y.z
@@ -19,12 +23,12 @@ dependencies:
     # The example app is bundled with the plugin so we use a path dependency on
     # the parent directory to use the current plugin's version.
     path: ../
-
-  english_words: ^3.1.0
+ 
+  english_words: ^4.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.3
+  cupertino_icons: ^1.0.5
 
 dev_dependencies:
   flutter_test:

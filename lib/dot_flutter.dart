@@ -21,7 +21,7 @@ class DOT {
    * Push Message 관련 함수 
    **/ 
   static void setPushClick(String uni_pushclickdata) {
-    if( uni_pushClickData != null ){
+    if( uni_pushclickdata != null ){
       _channel.invokeMethod("setPushClick", <String, dynamic>{'uni_pushclickdata': uni_pushclickdata});
     } 
   }

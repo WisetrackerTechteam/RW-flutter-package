@@ -1,15 +1,18 @@
 PODS:
-  - CouchbaseLite (2.7.1)
-  - dot_sdk (0.0.1):
+  - CouchbaseLite (3.1.0)
+  - dot_flutter (1.0.4):
     - Flutter
     - RW
   - Flutter (1.0.0)
-  - RW (0.0.20):
+  - RW (1.1.38):
     - CouchbaseLite
+  - url_launcher_ios (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
-  - dot_sdk (from `.symlinks/plugins/dot_sdk/ios`)
+  - dot_flutter (from `.symlinks/plugins/dot_flutter/ios`)
   - Flutter (from `Flutter`)
+  - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
 
 SPEC REPOS:
   trunk:
@@ -17,17 +20,20 @@ SPEC REPOS:
     - RW
 
 EXTERNAL SOURCES:
-  dot_sdk:
-    :path: ".symlinks/plugins/dot_sdk/ios"
+  dot_flutter:
+    :path: ".symlinks/plugins/dot_flutter/ios"
   Flutter:
     :path: Flutter
+  url_launcher_ios:
+    :path: ".symlinks/plugins/url_launcher_ios/ios"
 
 SPEC CHECKSUMS:
-  CouchbaseLite: cccddc91850c0005b1b0c57d306104b7d8aab685
-  dot_sdk: 7dd65334c24cee76d803590bfa4cb16b18d514a1
-  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  RW: 9c4530c55379fc82bddf2efc17b1ed7658f63096
+  CouchbaseLite: 18ad0a2090e218f88131ef21d699a720ad78a814
+  dot_flutter: 434c9889c9fd201a1d01cd4801929d6a3c6294d7
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  RW: 3ae492216bc94666e1723cff46709b3d3a8eb804
+  url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
 
-PODFILE CHECKSUM: 9fcf094fa24c8b52ee720139b0625d8c8d74ef8c
+PODFILE CHECKSUM: eb1a9d25647538ec3c56a3050fdbd3c9cc1dd027
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.12.1
