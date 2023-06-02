@@ -119,12 +119,21 @@
             doExecute = true; 
         }
         else if ([@"setPushClick" isEqualToString:call.method]){ 
-            NSError *e;
-            NSDictionary *rw_push_payload_wp_datadict = [NSJSONSerialization JSONObjectWithData:[self getDictionary:call param1:@"uni_pushclickdata"] options:nil error:&e];
+            
+            NSString *jsonString = [self getString:call param1:@"uni_pushclickdata"] ;
+            NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+
+            NSError *error = nil;
+            NSDictionary *rw_push_payload_wp_datadict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error]; 
+            if(error){
+                    NSLog(@"Error parsing JSON: %@, %@", error, [self getString:call param1:@"uni_pushclickdata"]   ); 
+            }    
+
             NSMutableDictionary *RW_push_payload_WP = [[NSMutableDictionary alloc] init];
-            [RW_push_payload_WP setValue:rw_push_payload_wp_datadict forKey:@"RW_push_payload_WP"]; 
-            [DOT setPushClick:RW_push_payload_WP application:UIApplication.sharedApplication];
-            doExecute = true; 
+            [RW_push_payload_WP setValue:rw_push_payload_wp_datadict forKey:@"RW_push_payload_WP"];      
+            [DOT setPushClick:RW_push_payload_WP application:UIApplication.sharedApplication]; 
+            doExecute = true;  
+            
         }
         else if ([@"setPushToken" isEqualToString:call.method]){
             [DOT setPushToken:[self getString:call param1:@"uni_pushtoken"]]; 

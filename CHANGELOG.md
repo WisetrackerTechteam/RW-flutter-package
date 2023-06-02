@@ -17,3 +17,7 @@
 ## 1.0.4 
 
 * Push Message 관련 api 추가, example 코드 업데이트 
+
+## 1.0.5 
+
+* iOS 에서 setPushClick 함수 버그 수정. 
