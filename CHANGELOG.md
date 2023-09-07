@@ -4,7 +4,7 @@
 
 ## 1.0.1
 
-* example 수정, README 수정. 
+* example 수정, README 수정
 
 ## 1.0.2
 
@@ -20,4 +20,8 @@
 
 ## 1.0.5 
 
-* iOS 에서 setPushClick 함수 버그 수정. 
+* iOS 에서 setPushClick 함수 버그 수정
+
+## 1.0.6 
+
+* Android Native SDK 가 배포된 Repository 변경
