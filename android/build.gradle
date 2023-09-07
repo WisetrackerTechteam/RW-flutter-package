@@ -16,13 +16,7 @@ rootProject.allprojects {
     repositories {
         google()
         jcenter()
-        maven {
-            url = uri("https://maven.pkg.github.com/WisetrackerTechteam/wisetracker-maven-repo")
-            credentials {
-                username = "wisetrackerMrcm"
-                password = "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"
-            }
-        }
+        maven { url 'https://wisetracker.jfrog.io/artifactory/wisetracker-gradle-release-local' } 
     }
 }
 

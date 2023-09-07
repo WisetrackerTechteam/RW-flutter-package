@@ -25,3 +25,7 @@
 ## 1.0.6 
 
 * Android Native SDK 가 배포된 Repository 변경
+
+## 1.0.7 
+
+* Android Native SDK 가 배포된 Repository 변경
