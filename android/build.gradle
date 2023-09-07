@@ -20,7 +20,7 @@ rootProject.allprojects {
             url = uri("https://maven.pkg.github.com/WisetrackerTechteam/wisetracker-maven-repo")
             credentials {
                 username = "wisetrackerMrcm"
-                password = "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"
+                password = "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"
             }
         }
     }
