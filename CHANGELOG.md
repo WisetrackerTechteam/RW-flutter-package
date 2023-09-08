@@ -22,10 +22,6 @@
 
 * iOS 에서 setPushClick 함수 버그 수정
 
-## 1.0.6 
+## 1.0.8 
 
-* Android Native SDK 가 배포된 Repository 변경
-
-## 1.0.7 
-
-* Android Native SDK 가 배포된 Repository 변경
+* Android Native SDK 가 배포된 Repository 변경 ( Github packages )
