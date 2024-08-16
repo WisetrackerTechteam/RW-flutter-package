@@ -72,7 +72,19 @@ class HomeScreen extends StatelessWidget {
                   DOT.logEvent(loginTp);
 
                 },
-                child: Text('Go to LoginSuccess by Jaeyoung'),
+                child: Text('Go to LoginSuccess'),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 10),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Map signUp = {};
+                    signUp["event"] = "w_signup_complete";
+                    signUp["signupTp"] = "email";
+                    DOT.logEvent(signUp);
+                  },
+                  child: Text('Sign Up'),
+                ),
               ),
             ),
           ],
