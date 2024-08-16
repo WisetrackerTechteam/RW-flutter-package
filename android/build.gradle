@@ -1,18 +1,15 @@
 group 'kr.co.wisetracker.dot'
 version '1.0'
 apply plugin: 'com.android.library'
-
 buildscript {
     repositories {
         google()
         jcenter()
     }
-
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath "com.android.tools.build:gradle:8.5.1"
     }
 }
-
 rootProject.allprojects {
     repositories {
         google()
@@ -28,13 +25,11 @@ rootProject.allprojects {
     }
 }
 
-
-
 android {
-    compileSdkVersion 28
-
+    namespace = "kr.co.wisetracker.dot"
+    compileSdkVersion 34
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 21
     }
     lintOptions {
         disable 'InvalidPackage'
@@ -42,6 +37,6 @@ android {
 }
 dependencies {
     // V2
-    implementation "com.sdk.wisetracker:base_module:latest.release"
-    implementation "com.sdk.wisetracker:new_dot_module:latest.release"
+    implementation "com.sdk.wisetracker:base_module:1.0.83"
+    implementation "com.sdk.wisetracker:new_dot_module:1.0.52"
 }

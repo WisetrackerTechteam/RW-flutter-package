@@ -25,3 +25,7 @@
 ## 1.0.8 
 
 * Android Native SDK 가 배포된 Repository 변경 ( Github packages )
+
+## 1.0.9
+
+* Android build 환경에 대하여 targetSdkVersion 버전을 34, minSdkVersion 버전을 21 값으로 변경. 

@@ -2,7 +2,7 @@
     <string name="app_name">WisetrackerSampleFlutter</string>
     <string-array name="dotAuthorizationKey">
         <item name="useMode">1</item>
-        <item name="serviceNumber">20347</item>
+        <item name="serviceNumber">20305</item>
         <item name="expireDate">14</item>
         <item name="isDebug">false</item>
         <item name="isInstallRetention">true</item>
