@@ -29,3 +29,7 @@
 ## 1.0.9
 
 * Android build 환경에 대하여 targetSdkVersion 버전을 34, minSdkVersion 버전을 21 값으로 변경. 
+
+## 1.0.10 
+* iOS build 환경에 대하여 Minimum Deployments 버전을 12.0 으로 변경. 
+* Deferred deeplink 사용 예시 추가.
