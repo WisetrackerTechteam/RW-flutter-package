@@ -8,7 +8,7 @@ import 'purchase.dart';
 import 'login_success.dart';
 
 class RouterService extends RouteObserver<PageRoute<dynamic>>{
-
+ 
   // PAGES 유형의 이벤트 수집 확인을 위한 코드 추가
   void _sendScreenView(PageRoute<dynamic> route) {
     var screenName = route.settings.name;

@@ -74,17 +74,17 @@ class HomeScreen extends StatelessWidget {
                 },
                 child: Text('Go to LoginSuccess'),
               ),
-              Container(
-                margin: EdgeInsets.only(top: 10),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Map signUp = {};
-                    signUp["event"] = "w_signup_complete";
-                    signUp["signupTp"] = "email";
-                    DOT.logEvent(signUp);
-                  },
-                  child: Text('Sign Up'),
-                ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10), // margin을 10px로 설정
+              child: ElevatedButton(
+                onPressed: () {
+                  Map signUp = {};
+                  signUp["event"] = "w_signup_complete";
+                  signUp["signupTp"] = "email";
+                  DOT.logEvent(signUp);
+                },
+                child: Text('Sign Up'),
               ),
             ),
           ],
