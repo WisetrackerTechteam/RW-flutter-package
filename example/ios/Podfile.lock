@@ -1,10 +1,10 @@
 PODS:
-  - CouchbaseLite (3.1.0)
-  - dot_flutter (1.0.4):
+  - CouchbaseLite (3.2.1)
+  - dot_flutter (1.0.9):
     - Flutter
-    - RW
+    - RW (~> 1.1.57)
   - Flutter (1.0.0)
-  - RW (1.1.38):
+  - RW (1.1.57):
     - CouchbaseLite
   - url_launcher_ios (0.0.1):
     - Flutter
@@ -28,12 +28,12 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/url_launcher_ios/ios"
 
 SPEC CHECKSUMS:
-  CouchbaseLite: 18ad0a2090e218f88131ef21d699a720ad78a814
-  dot_flutter: 434c9889c9fd201a1d01cd4801929d6a3c6294d7
+  CouchbaseLite: 1f79dabde5705d0356ccbee79c27daab0c0f4ca3
+  dot_flutter: 583d71d18c5e1592bfe923d94532fed7b3f28785
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  RW: 3ae492216bc94666e1723cff46709b3d3a8eb804
+  RW: 71dfc743c16757bb1194e987944ec50cdc8e5b94
   url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
 
 PODFILE CHECKSUM: eb1a9d25647538ec3c56a3050fdbd3c9cc1dd027
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.15.2

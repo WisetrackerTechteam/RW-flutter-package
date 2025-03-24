@@ -23,7 +23,6 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /** DotPlugin */
 public class DotPlugin implements FlutterPlugin, MethodCallHandler {
@@ -41,19 +40,19 @@ public class DotPlugin implements FlutterPlugin, MethodCallHandler {
     this.applicationContext = flutterPluginBinding.getApplicationContext();
   }
 
-  // This static function is optional and equivalent to onAttachedToEngine. It supports the old
-  // pre-Flutter-1.12 Android projects. You are encouraged to continue supporting
-  // plugin registration via this function while apps migrate to use the new Android APIs
-  // post-flutter-1.12 via https://flutter.dev/go/android-project-migration.
-  //
-  // It is encouraged to share logic between onAttachedToEngine and registerWith to keep
-  // them functionally equivalent. Only one of onAttachedToEngine or registerWith will be called
-  // depending on the user's project. onAttachedToEngine or registerWith must both be defined
-  // in the same class.
-  public static void registerWith(Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "dot");
-    channel.setMethodCallHandler(new DotPlugin());
-  }
+  /***** 
+   * 
+   * The registerWith function performs the same processing as the onAttachedToEngine function.
+   * In Flutter version 3.27.2, this function has been completely removed, which may cause build errors.
+   * If the current Flutter version is 3.27.2 or later, you must comment out the registerWith function to successfully build the project.
+   * Otherwise, if you are using an earlier version, you may uncomment and use this function if needed. ( update : 2025.03.24 ) 
+   * 
+   *    import io.flutter.plugin.common.PluginRegistry.Registrar;
+        public static void registerWith(Registrar registrar) {
+          final MethodChannel channel = new MethodChannel(registrar.messenger(), "dot");
+          channel.setMethodCallHandler(new DotPlugin());
+        }
+  *****/
 
   private String getString(MethodCall call, String key){
     String result = "";

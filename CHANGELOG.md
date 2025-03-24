@@ -33,3 +33,6 @@
 ## 1.0.10 
 * iOS build 환경에 대하여 Minimum Deployments 버전을 12.0 으로 변경. 
 * Deferred deeplink 사용 예시 추가.
+
+## 1.0.11
+* Flutter 3.29.2 버전에서 생성된 프로젝트 빌드시, io.flutter.plugin.common.PluginRegistry.Registrar 를 참조하지 못해서 발생하는 빌드 오류 수정.
