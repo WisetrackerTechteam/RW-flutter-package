@@ -36,9 +36,9 @@ class DOT {
   /**
    * 딥링크 관련 함수.  
    **/
-  static void setDeepLink(String uni_deepLink) {
-    if( uni_deepLink != null ){
-      _channel.invokeMethod("setDeepLink", <String, dynamic>{'uni_deepLink': uni_deepLink});
+  static void setDeepLink(String uni_deeplink) {
+    if( uni_deeplink != null ){
+      _channel.invokeMethod("setDeepLink", <String, dynamic>{'uni_deeplink': uni_deeplink});
     } 
   }
 
