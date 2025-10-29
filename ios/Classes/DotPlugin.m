@@ -63,7 +63,7 @@
         } else if ([@"onStopPage" isEqualToString:call.method]){
            
         } else if ([@"setDeepLink" isEqualToString:call.method]){
-            [DOT setDeepLink:[self getString:call param1:@"uni_deepLink"]];
+            [DOT setDeepLink:[self getString:call param1:@"uni_deeplink"]];
             doExecute = true;
         } else if ([@"setUser" isEqualToString:call.method]){ 
             
