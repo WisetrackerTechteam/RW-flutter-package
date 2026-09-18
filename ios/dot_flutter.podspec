@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'dot_flutter'
-  s.version          = '1.0.9'
+  s.version          = '1.0.14'
   s.summary          = 'Wisetracker RW SDK flutter plugin'
   s.description      = <<-DESC
 Wisetracker RW SDK flutter plugin.
@@ -19,6 +19,8 @@ Wisetracker RW SDK flutter plugin.
   s.ios.dependency 'RW'
 
   s.platform = :ios, '12.0'
-  # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
+  # 2026-09-17: 'VALID_ARCHS[sdk=iphonesimulator*] = x86_64' 제거.
+  # RW 의 DOT/DOTSession.xcframework 가 ios-arm64_x86_64-simulator 슬라이스를 포함하므로
+  # Apple Silicon 시뮬레이터(arm64)를 막을 이유가 없고, VALID_ARCHS 는 Xcode 12 부터 deprecated 임.
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
 end

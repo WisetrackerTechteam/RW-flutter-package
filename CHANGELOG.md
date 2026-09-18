@@ -42,3 +42,7 @@
 
 ## 1.0.13
 * Flutter -> Native 로 데이터를 전달하는 로직에서 확인된 버그 수정.
+
+## 1.0.14
+* Android: 저장소를 jcenter() 에서 mavenCentral() 로 변경 (Gradle 9 대응, jcenter 종료).
+* iOS: dot_flutter.podspec 에서 시뮬레이터 arm64 를 막던 VALID_ARCHS 설정 제거 (Apple Silicon Mac 시뮬레이터 지원).

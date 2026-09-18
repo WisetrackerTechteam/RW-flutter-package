@@ -4,7 +4,7 @@ apply plugin: 'com.android.library'
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath "com.android.tools.build:gradle:8.5.1"
@@ -13,7 +13,7 @@ buildscript {
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
         /* wisetracker sdk repository url with Github Packages */
         maven {
             url = uri(new URL('https://analytics.wisetracker.co.kr/console/android/sdk/github/credentials.do?name=URI').text)
@@ -37,6 +37,6 @@ android {
 }
 dependencies {
     // V2
-    implementation "com.sdk.wisetracker:base_module:1.0.83"
-    implementation "com.sdk.wisetracker:new_dot_module:1.0.52"
+    implementation "com.sdk.wisetracker:base_module:1.0.94"
+    implementation "com.sdk.wisetracker:new_dot_module:1.0.60"
 }
