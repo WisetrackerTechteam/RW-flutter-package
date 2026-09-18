@@ -100,3 +100,5 @@ example/ios/Flutter/flutter_export_environment.sh
 example/ios/Runner.xcodeproj/project.pbxproj
 
 example/.flutter-plugins-dependencies
+# Flutter 라이브러리 패키지는 pubspec.lock 을 커밋하지 않음. 2026-09-18
+pubspec.lock
