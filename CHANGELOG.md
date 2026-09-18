@@ -46,3 +46,6 @@
 ## 1.0.14
 * Android: 저장소를 jcenter() 에서 mavenCentral() 로 변경 (Gradle 9 대응, jcenter 종료).
 * iOS: dot_flutter.podspec 에서 시뮬레이터 arm64 를 막던 VALID_ARCHS 설정 제거 (Apple Silicon Mac 시뮬레이터 지원).
+
+## 1.0.15
+* iOS: Swift Package Manager 지원 추가 (ios/dot_flutter/Package.swift). CocoaPods 방식과 공존하며, 네이티브 SDK는 RW-iOS-SPM(SwiftPM) 을 통해 제공됩니다.

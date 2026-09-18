@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'dot_flutter'
-  s.version          = '1.0.14'
+  s.version          = '1.0.15'
   s.summary          = 'Wisetracker RW SDK flutter plugin'
   s.description      = <<-DESC
 Wisetracker RW SDK flutter plugin.
@@ -13,8 +13,9 @@ Wisetracker RW SDK flutter plugin.
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'wisetracker' => 'tech@wisetracker.co.kr' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
-  s.public_header_files = 'Classes/**/*.h'
+  # 2026-09-18: SPM 지원 추가로 소스를 dot_flutter/Sources 로 이동. CocoaPods 도 같은 위치를 참조(공존).
+  s.source_files = 'dot_flutter/Sources/dot_flutter/**/*'
+  s.public_header_files = 'dot_flutter/Sources/dot_flutter/include/**/*.h'
   s.dependency 'Flutter'
   s.ios.dependency 'RW'
 
