@@ -49,3 +49,8 @@
 
 ## 1.0.15
 * iOS: Swift Package Manager 지원 추가 (ios/dot_flutter/Package.swift). CocoaPods 방식과 공존하며, 네이티브 SDK는 RW-iOS-SPM(SwiftPM) 을 통해 제공됩니다.
+
+## 1.0.16
+* iOS: 네이티브 SDK RW 1.1.68 이상을 참조 (CocoaPods / Swift Package Manager 공통).
+  - SPM 으로 제공되는 CouchbaseLite 를 2.8.4 → 3.4.2 로 변경하여 CocoaPods 와 버전을 맞춤 (3.x 로 생성된 로컬 DB 호환).
+* iOS 최소 지원 버전 15.0.

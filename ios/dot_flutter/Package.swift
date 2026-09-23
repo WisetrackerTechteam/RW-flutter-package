@@ -15,7 +15,7 @@ let package = Package(
     ],
     dependencies: [
         // 네이티브 SDK(DOT/DOTSession/CouchbaseLite)는 RW-iOS-SPM 을 통해 제공
-        .package(url: "https://github.com/WisetrackerTechteam/RW-iOS-SPM.git", from: "1.1.66"),
+        .package(url: "https://github.com/WisetrackerTechteam/RW-iOS-SPM.git", from: "1.1.68"),
     ],
     targets: [
         .target(
